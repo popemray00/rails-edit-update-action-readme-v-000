@@ -531,3 +531,33 @@ Completed 302 Found in 23ms (ActiveRecord: 3.0ms)
 Started GET "/posts/4" for 173.241.164.96 at 2018-07-13 04:24:33 +0000
 Processing by PostsController#show as HTML
   Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 272ms (Views: 261.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/4/edit" for 173.241.164.96 at 2018-07-13 04:24:43 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/edit.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/4" for 173.241.164.96 at 2018-07-13 04:24:49 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0eK+rnWcmQRif9DkmXFDaQJmZQszk8cvB8TOlZPmMmcTHLdfwMI0rm+TyLmFafBYeFwWrqh4pftUaTDyUQeJ7Q==", "title"=>"Fortnite", "description"=>"vsvsfv", "commit"=>"Submit Post", "id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "vsvsfv"], ["updated_at", "2018-07-13 04:24:49.743350"], ["id", 4]]
+  [1m[35m (3.2ms)[0m  commit transaction
+Redirected to http://165.227.31.208:53119/posts/4
+Completed 302 Found in 8ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/4" for 173.241.164.96 at 2018-07-13 04:24:49 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.2ms)
