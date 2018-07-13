@@ -473,3 +473,27 @@ Processing by PostsController#show as HTML
   Parameters: {"id"=>"3"}
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
   Rendered posts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 40ms (Views: 25.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3/edit" for 173.241.164.96 at 2018-07-13 04:16:11 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered posts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/posts/3" for 173.241.164.96 at 2018-07-13 04:16:13 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PxoFyUE+76LWQ/P+KwKH+Tnz7bfCxljkCvmhy2hUogn95Aw49GBCCNuv66M3GjTIQ8meElktOjBZVF+sqrUZgw==", "title"=>"fortnite", "description"=>"kisj", "commit"=>"Submit Post", "id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+RuntimeError ({"utf8"=>"✓", "_method"=>"put", "authenticity_token"=>"PxoFyUE+76LWQ/P+KwKH+Tnz7bfCxljkCvmhy2hUogn95Aw49GBCCNuv66M3GjTIQ8meElktOjBZVF+sqrUZgw==", "title"=>"fortnite", "description"=>"kisj", "commit"=>"Submit Post", "controller"=>"posts", "action"=>"update", "id"=>"3"}):
+  app/controllers/posts_controller.rb:28:in `update'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.8ms)
