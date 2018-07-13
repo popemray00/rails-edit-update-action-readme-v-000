@@ -515,3 +515,19 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
   Rendered posts/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 173.241.164.96 at 2018-07-13 04:24:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TEdD1zjK3+gRvExOmckAnq093qO+S8CHj3jC3NqY1PmOuUomjZRyQhxQVBOF0bOv1wetBiWgolPc1Ty7GHlvcw==", "title"=>"Fortnite", "description"=>"scdcds", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Fortnite"], ["description", "scdcds"], ["created_at", "2018-07-13 04:24:33.645299"], ["updated_at", "2018-07-13 04:24:33.645299"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://165.227.31.208:53119/posts/4
+Completed 302 Found in 23ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/4" for 173.241.164.96 at 2018-07-13 04:24:33 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
