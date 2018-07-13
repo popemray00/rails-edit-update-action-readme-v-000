@@ -561,3 +561,14 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
   Rendered posts/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/posts/4" for 173.241.164.96 at 2018-07-13 04:25:01 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0eK+rnWcmQRif9DkmXFDaQJmZQszk8cvB8TOlZPmMmcTHLdfwMI0rm+TyLmFafBYeFwWrqh4pftUaTDyUQeJ7Q==", "title"=>"Fortni", "description"=>"vsvsfv", "commit"=>"Submit Post", "id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "Fortni"], ["updated_at", "2018-07-13 04:25:01.973678"], ["id", 4]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.31.208:53119/posts/4
+Completed 302 Found in 7ms (ActiveRecord: 3.2ms)
